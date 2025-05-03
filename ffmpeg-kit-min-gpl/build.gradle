@@ -1,5 +1,11 @@
 apply plugin: 'maven-publish'
 
+afterEvaluate {
+    tasks.register("assemble") {
+        dependsOn "publish"
+    }
+}
+
 publishing {
     publications {
         release(MavenPublication) {
