@@ -1,4 +1,9 @@
 jdk:
   - openjdk17
 build:
-  skip: true
+  gradle:
+    wrapper: ./gradlew
+    buildfile: build.gradle
+    tasks:
+      - :ffmpeg-kit-https:publish
+      - :ffmpeg-kit-min-gpl:publish
