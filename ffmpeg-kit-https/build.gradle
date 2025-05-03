@@ -1,7 +1,7 @@
 apply plugin: 'maven-publish'
 
 def libVersion = '6.0.3'
-def isLTS = true
+def isLTS = false
 
 afterEvaluate {
     tasks.register("assemble") {
