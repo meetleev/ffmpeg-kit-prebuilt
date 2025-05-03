@@ -1,4 +1,6 @@
 apply plugin: 'maven-publish'
+def libVersion = '6.0.3'
+def isLTS = true
 
 afterEvaluate {
     tasks.register("assemble") {
@@ -11,9 +13,16 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.meetleev'
             artifactId = 'ffmpeg-kit-min-gpl'
-            version = '6.0.3-LTS'
-            artifact(file('libs/ffmpeg-kit-min-gpl.aar')) {
-                extension 'aar'
+            if (isLTS) {
+                version = "$libVersion-LTS"
+                artifact(file('libs/ffmpeg-kit-min-gpl-LTS.aar')) {
+                    extension 'aar'
+                }
+            } else  {
+                version = $libVersion
+                artifact(file('libs/ffmpeg-kit-min-gpl.aar')) {
+                    extension 'aar'
+                }
             }
         }
     }
