@@ -1,0 +1,14 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.meetleev'
+            artifactId = 'ffmpeg-kit-https'
+            version = '6.0.3-LTS'
+            artifact(file('libs/ffmpeg-kit-https.aar')) {
+                extension 'aar'
+            }
+        }
+    }
+}
