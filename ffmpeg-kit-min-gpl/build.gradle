@@ -19,7 +19,7 @@ publishing {
                     extension 'aar'
                 }
             } else  {
-                version = $libVersion
+                version = libVersion
                 artifact(file('libs/ffmpeg-kit-min-gpl.aar')) {
                     extension 'aar'
                 }
