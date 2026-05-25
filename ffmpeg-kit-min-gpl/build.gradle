@@ -1,5 +1,5 @@
 apply plugin: 'maven-publish'
-def libVersion = '6.0.3'
+def libVersion = '6.0.4'
 def isLTS = false
 
 afterEvaluate {
